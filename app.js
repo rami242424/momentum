@@ -1,22 +1,44 @@
-console.log("Hello my name is Rami");
-console.log("Hello my name is Nico");
-console.log("Hello my name is Bori");
-console.log("Hello my name is Lynn");
-console.log("Hello my name is Luca");
+const h1 = document.querySelector("div.hello:first-child h1");
 
-반복된 코드가 너무 많다. -> function 필요
-코드를 캡슐화해서 실행을 여러번 할 수 있게 해준다.
-function 원하는이름(){
-    실행하게 될 코드 블록
+function handleTitleClick(){
+    console.log("title was clicked!");
+    h1.style.color = "blue";
 }
 
-function sayHello(){
-    console.log("hello");
+function handleMouseEnter(){
+    h1.innerText = "mouse is here";
 }
-// function 실행하기
-sayHello();
-sayHello();
-sayHello();
-// hello
-// hello
-// hello
+
+function handleMouseLeave(){
+    h1.innerText = "mouse is gone";
+}
+
+function handleWindowResize(){
+    document.body.style.backgroundColor = "tomato";
+}
+
+function handleWindowCopy(){
+    alert("copier!");
+}
+
+function handleWindowOffline(){
+    alert("SOS no WIFI");
+}
+
+function handleWindowOnline(){
+    alert("ALL GOOD");
+}
+
+// 여기서 h1은 HTML element이다
+h1.addEventListener("click", handleTitleClick);
+h1.addEventListener("mouseenter", handleMouseEnter);
+h1.addEventListener("mouseleave", handleMouseLeave);
+
+// 여기서부터는 window!
+
+window.addEventListener("resize", handleWindowResize);
+
+window.addEventListener("copy", handleWindowCopy);
+
+window.addEventListener("offline", handleWindowOffline);
+window.addEventListener("online", handleWindowOnline);
