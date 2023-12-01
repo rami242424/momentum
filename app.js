@@ -1,14 +1,22 @@
 const widthOutput = document.querySelector("#width");
 
 function updateSize() {
-    widthOutput.textContent = window.innerWidth;
-    let innerWidth;
-    if (innerWidth === "100.27px") {
-        widthOutput.style.backgroundColor = "blue";
+    const containerWidth  = window.innerWidth;
+    
+    if (containerWidth === 552) {
+        document.body.style.backgroundColor = "blue";
     } else {
-        widthOutput.style.backgroundColor = "red";
+        document.body.style.backgroundColor = "red";
     }
   }
   
-updateSize();
-window.addEventListener("resize", updateSize);
+  window.addEventListener("resize", updateSize);
+  updateSize();
+
+
+// function handleWindowResize(){
+//     if 
+//     document.body.style.backgroundColor = "tomato";
+// }
+
+// window.addEventListener("resize", handleWindowResize);
