@@ -1,9 +1,14 @@
-const h1 = document.querySelector("div.hello:first-child h1");
+const widthOutput = document.querySelector("#width");
 
-function handleTitleClick(){
-    // const clickedClass = "clicked"; 
-    // toggle로 클래스를 한번만 사용하기 때문에 정의할 필요가 없다.
-    h1.classList.toggle("clicked");
-}
-
-h1.addEventListener("click", handleTitleClick);
+function updateSize() {
+    widthOutput.textContent = window.innerWidth;
+    let innerWidth;
+    if (innerWidth === "100.27px") {
+        widthOutput.style.backgroundColor = "blue";
+    } else {
+        widthOutput.style.backgroundColor = "red";
+    }
+  }
+  
+updateSize();
+window.addEventListener("resize", updateSize);
