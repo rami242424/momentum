@@ -1,3 +1,12 @@
-.blue-background { background-color: blue; }
-.red-background { background-color: red; }
-.green-background { background-color: green; }
+h1 {
+  color: white;
+}
+.blue-background { 
+  background-color: blue;
+}
+.red-background { 
+  background-color: purple; 
+}
+.green-background { 
+  background-color: yellow; 
+}
