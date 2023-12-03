@@ -1,16 +1,23 @@
-const player ={
-    name: "rami",
-    age: 24,
-}
-// console.log(player.name, player.age);
-
 const calculator = {
     add: function(a, b){
-        console.log(a, b);
+        console.log(a + b);
+    },
+    minus: function(a, b){
+        console.log(a - b);
+    },
+    divide: function(a, b){
+        console.log(a / b);
+    },
+    multiply: function(a, b){
+        console.log(a * b);
+    },
+    powerof: function(a, b){
+        console.log(a ** b);
     },
 };
 
-calculator.add(5, 1); // 5 1
-// console.log(calculator.add); // ƒ (a, b){console.log(a, b);}
-// console.log(calculator.add()); // undefined undefined > undefined
-// calculator.add(); // undefined undefined
+calculator.add(5, 1); 
+calculator.minus(5, 1); 
+calculator.divide(15, 5); 
+calculator.multiply(5, 3); 
+calculator.powerof(5, 2); 
