@@ -1,23 +1,18 @@
-const calculator = {
-    plus: function(a, b){
-        console.log(a + b);
-    },
-    minus: function(a, b){
-        console.log(a - b);
-    },
-    divide: function(a, b){
-        console.log(a / b);
-    },
-    times: function(a, b){
-        console.log(a * b);
-    },
-    power: function(a, b){
-        console.log(a ** b);
-    },
-};
+// a링크의 기본작업 실행막아보기
+const loginForm = document.querySelector("#login-form");
+const loginInput = document.querySelector("#login-form input");
 
-calculator.plus(5, 1); 
-calculator.minus(5, 1); 
-calculator.divide(15, 5); 
-calculator.times(5, 3); 
-calculator.power(5, 2); 
+const link = document.querySelector("a");
+
+function onLoginSubmit(event){
+    event.preventDefault();
+    console.log(event);
+}
+
+function handleLinkClick(){
+    alert("Clicked!");
+}
+
+loginForm.addEventListener("submit", onLoginSubmit);
+link.addEventListener("click", handleLinkClick);
+
