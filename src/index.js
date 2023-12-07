@@ -18,3 +18,15 @@ const colors = [
   "#ffd32a",
   "#ff3f34"
 ];
+
+const button = document.querySelector('button');
+const body = document.body;
+
+button.addEventListener('click', () => {
+  // Randomly select two colors
+  const color1 = colors[Math.floor(Math.random() * colors.length)];
+  const color2 = colors[Math.floor(Math.random() * colors.length)];
+
+  // Set the body's background to a linear gradient using the two selected colors
+  body.style.background = `linear-gradient(to right, ${color1}, ${color2})`;
+});
