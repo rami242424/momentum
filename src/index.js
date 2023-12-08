@@ -1,32 +1,15 @@
-const colors = [
-  "#ef5777",
-  "#575fcf",
-  "#4bcffa",
-  "#34e7e4",
-  "#0be881",
-  "#f53b57",
-  "#3c40c6",
-  "#0fbcf9",
-  "#00d8d6",
-  "#05c46b",
-  "#ffc048",
-  "#ffdd59",
-  "#ff5e57",
-  "#d2dae2",
-  "#485460",
-  "#ffa801",
-  "#ffd32a",
-  "#ff3f34"
-];
+const clock = document.querySelector("h2#clock");
 
-const button = document.querySelector('button');
-const body = document.body;
+function getClock(){
+    const date = new Date;
+    const hours = String(date.getHours()).padStart(2, "0");
+    const minutes = String(date.getMinutes()).padStart(2, "0");
+    const seconds = String(date.getSeconds()).padStart(2, "0");
+    
+    // clock.innerText = (`${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`);
+    clock.innerText = `${hours}:${minutes}:${seconds}`;
+}
 
-button.addEventListener('click', () => {
-  // Randomly select two colors
-  const color1 = colors[Math.floor(Math.random() * colors.length)];
-  const color2 = colors[Math.floor(Math.random() * colors.length)];
 
-  // Set the body's background to a linear gradient using the two selected colors
-  body.style.background = `linear-gradient(to right, ${color1}, ${color2})`;
-});
+getClock();
+setInterval(getClock, 1000);
