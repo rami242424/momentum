@@ -45,4 +45,9 @@ const quote =  document.querySelector("#quote span:first-child");
 const author =  document.querySelector("#quote span:last-child");
 
 // console.log(quotes[10 - 1]);
-console.log(quotes[Math.floor(Math.random() * 10)]); // 랜덤하게 명언 출력되기
+// console.log(quotes[Math.floor(Math.random() * 10)]); // 랜덤하게 명언 출력되기
+// console.log(quotes[Math.floor(Math.random() * quotes.length)]);
+
+const todaysQuote = quotes[Math.floor(Math.random() * quotes.length)];
+quote.innerText = todaysQuote.quote;
+author.innerText = todaysQuote.author;
