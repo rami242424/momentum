@@ -1,14 +1,27 @@
-const player = {
-    name: "nico",
-    sayHello : function(otherPersonsName){
-        // console.log("hello"); // hello
-        // console.log(otherPersonsName); // lynn
-        console.log("hello " + otherPersonsName + " nice to meet you");
+const calculator ={
+    plus: function (a, b){
+        console.log(a + b);
     },
-};
+    
+    times: function (a, b){
+        console.log(a * b);
+    },
+    
+    minus: function(a, b){
+        console.log(a - b);
+    },
+    
+    divide: function(a, b){
+        console.log(a / b);
+    },
+    
+    power: function(a, b){
+        console.log(a ** b);
+    },
+}
 
-// console.log(player.name); // nico
-// player.sayHello("lynn"); // hello or lynn
-player.sayHello("lynn");
-player.sayHello("nico");
-player.sayHello("rami");
+calculator.plus(2,3);
+calculator.times(2,3);
+calculator.minus(2,3);
+calculator.divide(2,3);
+calculator.power(2,3);
