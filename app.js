@@ -19,4 +19,6 @@
 // ---------
 
 const age = parseInt(prompt("how old are you?"));
-console.log(age);
+console.log(age); 
+// 20(입력한 것) => 출력 20
+// abc(입력한 것) => 출력 NaN
