@@ -8,10 +8,20 @@
     <title>Momentum</title>
 </head>
 <body>
-    <div id="login-form">
-        <input type="text" placeholder="what is your name?" />
+    <form id="login-form">
+        <!-- 인풋의 유효성 검사(required, maxlength등)를 작동시키기 위해서는 input이 form안에 있어야한다.
+        인풋안에 있는 button을 누르거나, type이 input을 클릭하면 작성한 form에 submit된다.(새로고침도 동시에 발생)
+        form안에서 엔터를 누르고 input이 더 존재하지 않는다면 자동으로 submit된다.
+        form안에 있는 버튼을 눌렀을때도 form이 자동으로 submit된다.
+        -->
+        <input 
+            required
+            maxlength="15"
+            type="text" 
+            placeholder="what is your name?"
+        />
         <button>Log In</button>
-    </div>
+    </랙>
     <script src="app.js"></script>
 </body>
 </html>

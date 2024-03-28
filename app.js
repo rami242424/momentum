@@ -8,11 +8,15 @@ const loginButton = document.querySelector("#login-form button");
 
 
 function onLoginBtnClick(){
-    // console.log(loginInput.value);
-    // console.log("click");
-    if (loginInput.value !== ""){
-       console.log("hello " + loginInput.value);
-    } 
+    const username = loginInput.value;
+    console.log(username);
+
+    // if (username === ""){
+    //     alert("please write your name");
+    // } else if (username.length > 15){
+    //     alert("your name is too long");
+    // } 
+    // 대신 html input에서 설정가능
 }
 
 loginButton.addEventListener("click", onLoginBtnClick);
