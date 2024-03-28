@@ -1,4 +1,4 @@
-// 4.4 유저가 이름 제출한 뒤, 입력값 hidden하기
+// 4.5 value를 저장하는 방법
 
 const greeting = document.querySelector("#greeting");
 const link = document.querySelector("a");
@@ -13,7 +13,13 @@ function onLoginSubmit(event){
     // console.log(loginInput.value);
     loginForm.classList.add(HIDDEN_CLASSNAME);
     const username = loginInput.value;
+
+    localStorage.setItem("username", username);
+
     greeting.innerText = "hello " + username;
+    // 아래와 같은 코드
+    // greeting.innerText = `hello  ${username}`;
+
     greeting.classList.remove(HIDDEN_CLASSNAME);
     // console.log(username);
 }
