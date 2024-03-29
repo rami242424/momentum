@@ -6,12 +6,13 @@ const clock = document.querySelector("h2#clock");
 
 function getClock(){
     const date = new Date();
-    // console.log(`${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`);
-    clock.innerText = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+    const hours = String(date.getHours()).padStart(2, "0");
+    const mins = String(date.getMinutes()).padStart(2, "0");
+    const sec = String(date.getSeconds()).padStart(2, "0");
+    clock.innerText = `${hours}:${mins}:${sec}`;
+    // clock.innerText = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
 }
 
-// setInterval(sayHello, 5000); // argument : 호출하려는 함수, 호출할 시간
-// setTimeout(sayHello, 5000); // argument : 호출하려는 함수, 얼마나 기다릴 건지 시간(ms)
 
-getClock(); // 즉시호출(딜레이 없이 바로 시간로딩)
-setInterval(getClock, 1000); // 이것만 입력하면, 페이지가 로딩되고 1초뒤부터 시간이 보여진다.
+getClock(); 
+setInterval(getClock, 1000); 
