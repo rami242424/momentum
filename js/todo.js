@@ -1,12 +1,13 @@
 const toDoForm = document.getElementById("todo-form");
 const toDoInput = toDoForm.querySelector("input");
 const toDoList = document.getElementById("todo-list");
+const TODOS_KEY = "todos";
 
 const toDos = [];
 
 function saveToDos(){ // toDos []의 내용을 로컬스토리지에 넣기 위해 만든 함수
     // localStorage.setItem("todos", toDos);
-    localStorage.setItem("todos", JSON.stringify(toDos)); // string으로 바꿔줌
+    localStorage.setItem(TODOS_KEY, JSON.stringify(toDos)); // string으로 바꿔줌
 }
 
 function deleteToDo(event){
@@ -39,3 +40,20 @@ function handleToDoSubmit(event){
 }
 
 toDoForm.addEventListener("submit", handleToDoSubmit);
+
+function sayHello(item){
+    // console.log("hello");
+    console.log("this is the turn of", item)
+}
+
+const savedToDos = localStorage.getItem(TODOS_KEY);
+// console.log(savedToDos); // null : 로컬스토리지에 아무것도 없기때문에
+// console.log(savedToDos);
+if(savedToDos !== null){
+    const parsedTodos = JSON.parse(savedToDos);
+    // console.log(parsedTodos);
+    parsedTodos.forEach(sayHello);
+
+    //function sayHello(item) 함수 대신 아래 코드 한줄만 사용가능(서로같음)
+    // parsedTodos.forEach((item) => console.log("this is the turn of", item));
+}
