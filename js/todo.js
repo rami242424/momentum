@@ -12,8 +12,8 @@ function saveToDos(){ // toDos []의 내용을 로컬스토리지에 넣기 위�
 
 function deleteToDo(event){
     // console.log(event.target.parentElement);
-    const li = event.target.parentElement; // 삭제하고 싶은 li
-    li.remove();
+    const li = event.target.parentElement; // 삭제하고 싶은 li(버튼의 부모요소선택)
+    li.remove(); // 선택한 li(버튼의 부모) 지우기
 }
 
 function paintToDo(newTodo){ // todo를 그리는 역할 담당
@@ -54,6 +54,6 @@ if(savedToDos !== null){
     // console.log(parsedTodos);
     parsedTodos.forEach(sayHello);
 
-    //function sayHello(item) 함수 대신 아래 코드 한줄만 사용가능(서로같음)
+    //function sayHello(item) 함수 대신 아래 코드 한줄만 사용가능(서로같음) : 화살표함수
     // parsedTodos.forEach((item) => console.log("this is the turn of", item));
 }
