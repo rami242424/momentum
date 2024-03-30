@@ -3,7 +3,7 @@ const toDoInput = toDoForm.querySelector("input");
 const toDoList = document.getElementById("todo-list");
 const TODOS_KEY = "todos";
 
-const toDos = [];
+let toDos = []; // const > let으로 바꿔주기
 
 function saveToDos(){ // toDos []의 내용을 로컬스토리지에 넣기 위해 만든 함수
     // localStorage.setItem("todos", toDos);
@@ -18,8 +18,9 @@ function deleteToDo(event){
 
 function paintToDo(newTodo){ // todo를 그리는 역할 담당
     const li = document.createElement("li");
+    li.id = newTodo.id
     const span = document.createElement("span");
-    span.innerText = newTodo;
+    span.innerText = newTodo.text;
 
     const button = document.createElement("button");
     button.innerText = "❌";
@@ -34,8 +35,16 @@ function handleToDoSubmit(event){
     event.preventDefault();
     const newTodo = toDoInput.value;
     toDoInput.value = "";
-    toDos.push(newTodo); // 이걸 로컬스토리지에 담고싶다 but 배열은 불가하고 텍스트만 저장할 수 있다.
-    paintToDo(newTodo);
+
+    const newTodoObj = {
+        text : newTodo,
+        id : Date.now(),
+    }
+
+    toDos.push(newTodoObj);
+    // toDos.push(newTodo); // 이걸 로컬스토리지에 담고싶다 but 배열은 불가하고 텍스트만 저장할 수 있다.(데이터베이스로 매번 사용자가 적어둔 text를 push함)
+    // paintToDo(newTodo);
+    paintToDo(newTodoObj);
     saveToDos();
 }
 
@@ -43,7 +52,7 @@ toDoForm.addEventListener("submit", handleToDoSubmit);
 
 function sayHello(item){
     // console.log("hello");
-    console.log("this is the turn of", item)
+    // console.log("this is the turn of", item);
 }
 
 const savedToDos = localStorage.getItem(TODOS_KEY);
