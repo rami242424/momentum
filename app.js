@@ -15,5 +15,6 @@ const sun = "sun";
 
 const daysOfWeek = ["mon", "tue", "wed"];
 console.log(daysOfWeek); // ['mon', 'tue', 'wed']
+
 daysOfWeek.push("thur");
-console.log(daysOfWeek);
+console.log(daysOfWeek); // ['mon', 'tue', 'wed', 'thur']
