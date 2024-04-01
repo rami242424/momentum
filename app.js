@@ -119,6 +119,6 @@ const player = {
 };
 console.log(player.name); // nico
 player.sayHello("lynn"); // hello lynn nice to meet you
-player.sayHello("rami");
-player.sayHello("nico");
-player.sayHello("frank");
+player.sayHello("rami"); // hello rami nice to meet you
+player.sayHello("nico"); // hello nico nice to meet you
+player.sayHello("frank"); // hello frank nice to meet you
