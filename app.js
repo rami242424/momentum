@@ -1,8 +1,9 @@
-const title = document.getElementById("title");
-console.dir(title);
+const title = document.querySelector(".hello h1");
 
-title.innerText = "어쩌라고";
-console.log(title.id);
-console.log(title.innerText);
-console.log(title.autofocus);
-console.log(title.className);
+
+function handleTitleClick(){
+    // console.log("title was clicked!");
+    title.style.color = "red";
+}
+
+title.addEventListener("click", handleTitleClick);
