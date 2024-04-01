@@ -1,34 +1,20 @@
-const title = document.querySelector(".hello h1");
-
+const h1 = document.querySelector("div.hello:first-child h1");
 
 function handleTitleClick(){
-    // console.log("title was clicked!");
-    title.style.color = "red";
+    // console.log(h1.style.color); // getter
+    // h1.style.color = "blue"; // setter
+    // console.log(h1.style.color); // getter
+    // ---------------------
+ 
+    const currentColor = h1.style.color;
+    let newColor;
+
+    if(currentColor === "blue") { /// === 일치함을 확인하는 용도
+        newColor = "tomato"; // = 수정
+    } else {
+        newColor = "blue";
+    }
+    h1.style.color = newColor;
 }
 
-function handleMouseEnter(){
-    title.innerText = "mouse is here";
-}
-
-function handleMouseLeave(){
-    title.innerText = "mouse is gone";
-}
-
-function handleWindowResize(){
-    document.body.style.backgroundColor = "tomato";
-}
-
-function handleWindowCopy(){
-    alert("copier!!");
-}
-
-
-title.addEventListener("click", handleTitleClick);
-// title.onclick = handleTitleClick;
-title.addEventListener("mouseenter", handleMouseEnter);
-// title.onmouseenter = handleMouseEnter;
-title.addEventListener("mouseleave", handleMouseLeave);
-// title.onmouseleave = handleMouseLeave;
-
-window.addEventListener("resize", handleWindowResize);
-window.addEventListener("copy", handleWindowCopy);
+h1.addEventListener("click", handleTitleClick);
