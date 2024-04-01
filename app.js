@@ -1,6 +1,3 @@
-const a = 8;
-const b = "10";
-
-console.log(a + b);
-console.log(a / b);
-console.log(a * b);
+const amIFat = null;
+let something;
+console.log(something, amIFat);
