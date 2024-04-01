@@ -1,20 +1,35 @@
-const mon = "mon1";
-const tue = "tue";
-const wed = "wed";
-const thu = "thu";
-const fri = "fri";
-const sat = "sat";
-const sun = "sun";
+// const playerName = "nico";
+// const playerPoints = 1515;
 
-// const daysOfWeek = mon + tue
-// console.log(daysOfWeek); // mon1tue
+// 위 코드를 console.log() 식으로 바꿔보기
+// 예를 들어 player.name, player.points 등
 
-// const daysOfWeek = [mon, tue]
-// console.log(daysOfWeek); //  ['mon1', 'tue']
-// console.log(daysOfWeek[0]); // mon1
+// 배열로 해볼까?
+// const player = ["nico", 1515];
+// player.name X
 
-const daysOfWeek = ["mon", "tue", "wed"];
-console.log(daysOfWeek); // ['mon', 'tue', 'wed']
+// Object로 만들기
+const player = {
+    name : "nico",
+    point : 1515,
+    fat : true,
+}
+// console.log(player);
+// console.log(player.name);
 
-daysOfWeek.push("thur");
-console.log(daysOfWeek); // ['mon', 'tue', 'wed', 'thur']
+// const 안의 property 수정 및 추가도 가능
+// 수정
+// console.log(player); // {name: 'nico', point: 1515, fat: true}
+// player.fat = false; 
+// console.log(player); // {name: 'nico', point: 1515, fat: false}
+
+// 추가 
+// console.log(player); // {name: 'nico', point: 1515, fat: true}
+// player.lastName = "oh";
+// console.log(player); // {name: 'nico', point: 1515, fat: true, lastName: 'oh'}
+
+// 변형
+console.log(player); //{name: 'nico', point: 1515, fat: true}
+player.point = player.point + 10;
+console.log(player); // {name: 'nico', point: 1525, fat: true}
+console.log(player.point); // 1525
