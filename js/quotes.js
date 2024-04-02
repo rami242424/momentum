@@ -46,8 +46,8 @@ const quotes = [
 const quote = document.querySelector("#quote span:first-child");
 const author = document.querySelector("#quote span:last-child");
 
-console.log(quotes[0]); // 첫번째 명언
-console.log(quotes[quotes.length - 1]); // 마지막 명언
+// console.log(quotes[0]); // 첫번째 명언
+// console.log(quotes[quotes.length - 1]); // 마지막 명언
 // console.log(quotes[Math.random(quotes.length - 1) * (quotes.length - 1) ]); // 나의 오답
 // console.log(quotes[Math.floor(Math.random() * quotes.length)]);
 const todaysQuote = quotes[Math.floor(Math.random() * quotes.length)];

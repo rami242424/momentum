@@ -7,3 +7,5 @@ function getClock(){
     const sec = String(date.getSeconds()).padStart(2, "0");
     clock.innerText = `${hours}:${mins}:${sec}`;
 }
+
+const todaysQuote = quotes[Math.floor(Math.random() * quotes.length)];
