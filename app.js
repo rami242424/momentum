@@ -8,9 +8,11 @@ function onLoginSubmit(event){
     loginForm.classList.add(HIDDEN_CLASSNAME);
     const username = loginInput.value; // 유저이름 저장
     // greeting.innerText = "Hello " + username;
+    localStorage.setItem("userName", username); // 로컬스토리지에 유저이름저장
     greeting.innerText = `Hello ${username}`;
     greeting.classList.remove(HIDDEN_CLASSNAME);
     console.log(username);
+
 }
 
 
