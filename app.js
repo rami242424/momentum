@@ -1,12 +1,17 @@
 const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
+const link = document.querySelector("a");
 
-
-function onLoginSubmit(event){ // submit은 엔터를 누르거나 버튼을 클릭할 때 발생한다.
-    event.preventDefault(); // 브라우저의 기본 동작 막아주기
+function onLoginSubmit(event){ 
+    event.preventDefault();
     console.log(loginInput.value);
 }
 
+function handleLinkClick(event){
+    event.preventDefault();
+    // console.dir(event);
+    // alert("clicked"); // alert이 함수의 기본동작을 일시적으로 막는다-> alert의 ok를 우르면 다시 기본동작이 실행된다.
+}
+
 loginForm.addEventListener("submit", onLoginSubmit);
-// 미션1 form을 submit할때 입력값을 받아내는것(submit event 감지)
-// 미션2 submit후 새로고침되는것 막기(윈도우 기본동작)
+link.addEventListener("click", handleLinkClick);
