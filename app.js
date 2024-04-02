@@ -1,15 +1,11 @@
-const h1 = document.querySelector("div.hello:first-child h1");
+const loginForm = document.getElementById("login-form");
+const loginInput = loginForm.querySelector("input");
+const loginButton = loginForm.querySelector("button");
 
-// classList : class들의 목록으로 작업할 수 있게 허용해줌
-// className : 모든걸 교체해버림(기존것 삭제)
-function handleTitleClick(){
-    const clickedClass = "clicked";
-   if (h1.classList.contains(clickedClass)){
-    h1.classList.remove(clickedClass);
-   } else {
-    h1.classList.add(clickedClass);
-   }
 
+function onLoginBtnClick(){
+    const username = loginInput.value;
+    console.log(username)   ;
 }
 
-h1.addEventListener("click", handleTitleClick);
+loginButton.addEventListener("click", onLoginBtnClick);

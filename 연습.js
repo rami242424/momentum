@@ -19,12 +19,12 @@
 //     console.log("hello my name is " + nico);
 // }
 // sayHello(); // hello my name is undefined
-
+// -----
 // function sayHello(nico){
 //     console.log("hello my name is " + nico);
 // }
 // sayHello("nico"); // hello my name is nico
-
+// -----
 // function sayHello(nico, rami){
 //     console.log("hello my name is " + nico);
 //     console.log("hello my name is " + rami);
@@ -35,12 +35,12 @@
 // hello my name is undefined
 // hello my name is rami
 // hello my name is undefined
-
+// -----
 // function sayHello(nico, rami){
 //     console.log("hello my name is " + nico);
 //     console.log("hello my name is " + rami);
 // }
-// sayHello("nico, rami"); 
+// sayHello("nico, rami"); // => "nico, rami"를 하나의 argument로 봐서
 // hello my name is nico, rami
 // hello my name is undefined
 
@@ -51,21 +51,21 @@
 // sayHello("nico"); // nico
 // sayHello("dal");  // dal
 // sayHello("lynn"); // lynn
-
+// ---------------------
 // function sayHello(nameOfPerson, age){
 //     console.log(nameOfPerson);
 // }
 // sayHello("nico", 20); // nico
 // sayHello("dal", 15); // dal
 // sayHello("lynn", 35); // lynn
-
+// ---------------------
 // function sayHello(nameOfPerson, age){
 //     console.log(nameOfPerson, age);
 // }
 // sayHello("nico", 20); // nico 20
 // sayHello("dal", 15); // dal 15
 // sayHello("lynn", 35); // lynn 35
-
+// ---------------------
 // function sayHello(nameOfPerson, age){
 //     console.log("Hello my name is " + nameOfPerson + " and i am " + age + "years old");
 // }
@@ -81,14 +81,14 @@
 // }
 
 // plus(); // undefined undefined
-
+// ---------------------
 // function plus(a, b){
 //     console.log(a + b);
 // }
 
 // plus(); // NaN
 
-
+// ---------------------
 // function plus(firstNum, secNum){
 //     console.log(firstNum + secNum);
 // }
@@ -98,7 +98,7 @@
 // plus(8, 60); // 68 -> firstNum = 8, secNum = 60
 // divide(40, 4); // 10 -> firstNum = 40, secNum = 4
 
-// ----
+// ---------------------
 
 // function sayHello(){} -> object 안에서는 sayHello : function(){}로 바뀐다.
 // const player = {
