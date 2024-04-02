@@ -1,17 +1,17 @@
 const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
-const link = document.querySelector("a");
+const greeting = document.querySelector("#greeting");
 
-function onLoginSubmit(event){ 
+function onLoginSubmit(event){
+    const HIDDEN_CLASSNAME = "hidden"; // 중요한 정보가 아니라 대문자로 작성
     event.preventDefault();
-    console.log(loginInput.value);
+    loginForm.classList.add(HIDDEN_CLASSNAME);
+    const username = loginInput.value; // 유저이름 저장
+    // greeting.innerText = "Hello " + username;
+    greeting.innerText = `Hello ${username}`;
+    greeting.classList.remove(HIDDEN_CLASSNAME);
+    console.log(username);
 }
 
-function handleLinkClick(event){
-    event.preventDefault();
-    // console.dir(event);
-    // alert("clicked"); // alert이 함수의 기본동작을 일시적으로 막는다-> alert의 ok를 우르면 다시 기본동작이 실행된다.
-}
 
 loginForm.addEventListener("submit", onLoginSubmit);
-link.addEventListener("click", handleLinkClick);
