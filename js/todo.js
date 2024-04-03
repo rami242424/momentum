@@ -5,10 +5,11 @@ const toDoForm = document.getElementById("todo-form");
 const toDoInput = toDoForm.querySelector("input"); // 위 코드와 동일
 const toDoList = document.getElementById("todo-list");
 const toDos = [];
+const TODOS_KEY = "todos";
 
 function saveToDos(){
     // localStorage.setItem("todos", toDos); // toDos 들이 배열로 출력됨
-    localStorage.setItem("todos", JSON.stringify(toDos)); // 배열=>string으로 변경
+    localStorage.setItem(TODOS_KEY, JSON.stringify(toDos)); // 배열=>string으로 변경
 }
 
 function deleteToDo(event){
@@ -39,3 +40,20 @@ function handleToDoSubmint(event){
 }
 
 toDoForm.addEventListener("submit", handleToDoSubmint);
+
+
+
+function sayHello(item){
+    console.log("This is the turn of ", item);
+}
+
+const savedToDos = localStorage.getItem(TODOS_KEY);
+// console.log(savedToDos); // array지만 string
+
+// JSON.parse로 진짜 array(이용가능한)로 만들기
+if (savedToDos !== null) {
+    const parsedToDos = JSON.parse(savedToDos);
+    console.log(parsedToDos); // 이용가능한 array => 각각의 함수도 적용 가능
+    parsedToDos.forEach(sayHello); // forEach array의 각 item에 대해 함수를 실행
+
+}
