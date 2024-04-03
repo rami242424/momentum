@@ -1,5 +1,3 @@
-// JSON.stringify() : object, array 등 모든 코드 => string 으로 만들어줌
-
 const toDoForm = document.getElementById("todo-form");
 const toDoInput = toDoForm.querySelector("input"); 
 const toDoList = document.getElementById("todo-list");
@@ -12,11 +10,7 @@ function saveToDos(){
 
 function deleteToDo(event){
     const li = event.target.parentElement;
-    // console.log(li.id);
-    // 클릭했던 li의 id를 갖고 있는 toDo를 지운다.
     li.remove();
-    // toDos = toDos.filter(toDo => toDo.id !== li.id);
-    // toDo.id = number, li.id = string 통합해줘야함
     toDos = toDos.filter(toDo => toDo.id !== parseInt(li.id));
     saveToDos();
 }
