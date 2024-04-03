@@ -12,8 +12,13 @@ function saveToDos(){
 
 function deleteToDo(event){
     const li = event.target.parentElement;
-    console.log(li.id);
+    // console.log(li.id);
+    // 클릭했던 li의 id를 갖고 있는 toDo를 지운다.
     li.remove();
+    // toDos = toDos.filter(toDo => toDo.id !== li.id);
+    // toDo.id = number, li.id = string 통합해줘야함
+    toDos = toDos.filter(toDo => toDo.id !== parseInt(li.id));
+    saveToDos();
 }
 
 function paintToDo(newTodo){
