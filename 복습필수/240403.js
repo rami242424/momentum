@@ -24,4 +24,14 @@ if (savedToDos !== null) {
 
 }
 
-//방법2
+// filter사용하기1 - arr에서 바나나를 지워라
+const arr = ["pizza", "banana", "apple"];
+function foodFilter(food){
+    return food !== "banana" // arr에서 banana 제거하기
+}
+arr.filter(foodFilter); // ["pizza", "apple"];
+
+// filter사용하기2 - arr에서 1000이상의 숫자는 지워라
+const arr = [123, 45, 678, 91011];
+function deleteNum(num){ return num <= 1000};
+arr.filter(deleteNum); // [123, 45, 678]

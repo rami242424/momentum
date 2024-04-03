@@ -20,8 +20,7 @@ function paintToDo(newTodo){
     const li = document.createElement("li");
     li.id = newTodo.id;
     const span = document.createElement("span");
-    // span.innerText = newTodo; // array의 todo를 받을때
-    span.innerText = newTodo.text; // object를 todo로 받을떄
+    span.innerText = newTodo.text; 
     const btn = document.createElement("button");
     btn.innerText = "X";
     btn.addEventListener("click", deleteToDo);
@@ -34,11 +33,9 @@ function handleToDoSubmint(event){
     event.preventDefault();
     const newTodo = toDoInput.value; 
     toDoInput.value = ""; 
-    // 텍스트 toDo리스트-> object로 push하기(각 todo에 고유의 id값을 주기위해서)
-    // toDos.push(newTodo); // toDo리스트를 저장하는 부분(text로 저장중)
     const newTodoObj = {
         text : newTodo,
-        id: Date.now(),   // Date.now() 랜덤한 밀리초 숫자를 제공함
+        id: Date.now(),  
     };
     toDos.push(newTodoObj);
     paintToDo(newTodoObj); 
@@ -55,3 +52,4 @@ if (savedToDos !== null) {
     toDos = parsedToDos;
     parsedToDos.forEach(paintToDo); 
 }
+
