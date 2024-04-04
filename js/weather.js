@@ -20,17 +20,47 @@ function onGeoOk(position){
             const weather = document.querySelector("#weather span:first-child");
             const city = document.querySelector("#weather span:last-child");
             city.innerText = data.name;
-            // weather.innerText = data.weather[0].main;
-            weather.innerText = `${data.weather[0].main} // ${data.main.temp}`;
-            
+            const weatherMain = data.weather[0].main; //
+            weather.innerText = data.weather[0].main;
+            weather.innerText = `${getWeatherEmoji(weatherMain)} ${data.weather[0].main} ${data.main.temp} º`;
+           
     });
 }
 
 function onGeoError(){
-    alert("Can't find you. No weather for you")
+    alert("Can't find your location. No weather for you")
 }
 
 navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
 
 
 // https://api.openweathermap.org/data/2.5/weather?lat=37.60082&lon=126.649615&appid=09ccd72a24f2ae9530ae57fe5dbc6d21&units=metric
+
+function getWeatherEmoji(weatherMain) {
+    switch (weatherMain) {
+        case "Clear":
+            return "☀️";
+        case "Clouds":
+            return "☁️";
+        case "Rain":
+            return "🌧️";
+        case "Drizzle":
+            return "🌧️";
+        case "Thunderstorm":
+            return "⛈️";
+        case "Snow":
+            return "❄️";
+        case "Mist":
+        case "Smoke":
+        case "Haze":
+        case "Dust":
+        case "Fog":
+        case "Sand":
+        case "Ash":
+        case "Squall":
+        case "Tornado":
+            return "🌫️";
+        default:
+            return "❓"; // 알 수 없는 날씨 상태의 기본 이모지
+    }
+}
