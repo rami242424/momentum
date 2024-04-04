@@ -39,6 +39,16 @@ if (savedUsername === null){
 }
 
 function paintGreeting(username){
-    greeting.innerText = `Hello ${username}`;
+    greeting.innerText = `Hello, ${username}! Welcome!`;
     greeting.classList.remove(HIDDEN_CLASSNAME);
 }
+
+
+
+// ------------ css하면서 추가된 부분
+// function clickedInput(){
+//     loginInput.placeholder = "";
+// }
+
+// loginInput.addEventListener("click", clickedInput);
+

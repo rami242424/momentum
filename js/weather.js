@@ -31,3 +31,6 @@ function onGeoError(){
 }
 
 navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
+
+
+// https://api.openweathermap.org/data/2.5/weather?lat=37.60082&lon=126.649615&appid=09ccd72a24f2ae9530ae57fe5dbc6d21&units=metric
